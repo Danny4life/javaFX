@@ -14,6 +14,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MovieController {
+
+    @FXML
+    private ObservableList<Movie> movieList = FXCollections.observableArrayList();
+
+
     @FXML
     private TextField titleField;
 
@@ -46,7 +51,7 @@ public class MovieController {
 
     // Method to load movies from the database
     private void loadMovies() {
-        ObservableList<Movie> movieList = FXCollections.observableArrayList();
+         movieList = FXCollections.observableArrayList();
         try {
             ResultSet resultSet = DatabaseHelper.getMovies();
             while (resultSet.next()) {
@@ -62,6 +67,8 @@ public class MovieController {
             showError("Error loading movies", e.getMessage());
         }
         movieTable.setItems(movieList);
+
+        movieTable.refresh();
     }
 
     // Method to handle adding a new movie
@@ -85,6 +92,18 @@ public class MovieController {
             showError("Error adding movie", e.getMessage());
         }
     }
+
+    @FXML
+    public void handleRetrieveMovies() throws SQLException {
+
+//        // Loop through the movie list and print each movie's details
+        for (Movie movie : movieList) {
+
+            System.out.println("Title: " + movie.getTitle() + ", Director: " + movie.getDirector() + ", Release Year: " + movie.getReleaseYear());
+        }
+
+    }
+
 
     // Method to clear input fields
     private void clearFields() {

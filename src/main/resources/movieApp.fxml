@@ -17,6 +17,9 @@
         <TextField fx:id="directorField" layoutX="200.0" layoutY="230.0" promptText="Enter director" />
         <TextField fx:id="releaseYearField" layoutX="400.0" layoutY="230.0" promptText="Enter release year" />
         <Button text="Add Movie" layoutX="550.0" layoutY="230.0" onAction="#handleAddMovie"/>
+
+        <Button text="Retrieve Movies" layoutX="650.0" layoutY="230.0" onAction="#handleRetrieveMovies"/>
+
     </children>
 </AnchorPane>
 

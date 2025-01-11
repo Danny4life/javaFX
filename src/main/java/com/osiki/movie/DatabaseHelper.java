@@ -16,27 +16,6 @@ public class DatabaseHelper {
     }
 
 
-
-//    public static List<Movie> getMovies() {
-//        List<Movie> movies = new ArrayList<>();
-//        String query = "SELECT * FROM movies";
-//        try (Connection connection = getConnection();
-//             Statement statement = connection.createStatement();
-//             ResultSet resultSet = statement.executeQuery(query)) {
-//
-//            while (resultSet.next()) {
-//                int id = resultSet.getInt("id");
-//                String title = resultSet.getString("title");
-//                String director = resultSet.getString("director");
-//                int releaseYear = resultSet.getInt("release_year");
-//                movies.add(new Movie(id, title, director, releaseYear));
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return movies;
-//    }
-
     // Method to fetch movies from the database
     public static ResultSet getMovies() throws SQLException {
         Connection connection = getConnection();

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.osiki.movie.MovieController">
+    <children>
+        <TableView fx:id="movieTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="500.0">
+            <columns>
+                <TableColumn fx:id="titleColumn" text="Title" />
+                <TableColumn fx:id="directorColumn" text="Director" />
+                <TableColumn fx:id="releaseYearColumn" text="Release Year" />
+            </columns>
+        </TableView>
+
+        <TextField fx:id="titleField" layoutX="14.0" layoutY="230.0" promptText="Enter title" />
+        <TextField fx:id="directorField" layoutX="200.0" layoutY="230.0" promptText="Enter director" />
+        <TextField fx:id="releaseYearField" layoutX="400.0" layoutY="230.0" promptText="Enter release year" />
+        <Button text="Add Movie" layoutX="550.0" layoutY="230.0" onAction="#handleAddMovie"/>
+    </children>
+</AnchorPane>
+
